@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='C:\Users\fryeb\Desktop\quick\src'
+let g:netrw_dirhist_2='C:/Users/fryeb/Desktop/quick/src/QK'
+let g:netrw_dirhist_3='C:/Users/fryeb/Desktop/quick/src/QK/core'
+let g:netrw_dirhist_4='W:\tools'
+let g:netrw_dirhist_5='W:\qk\src'
+let g:netrw_dirhist_6='W:/qk/src'

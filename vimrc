@@ -6,9 +6,6 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-inoremap ;; <Esc> 
-inoremap ; ;<CR>
-
 syntax on "Enable Syntax Highlighting
 
 " Prevent Vim from leaving swapfiles everywhere
