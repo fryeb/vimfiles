@@ -6,9 +6,6 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-inoremap ;; <Esc> 
-inoremap ; ;<CR>
-
 syntax on "Enable Syntax Highlighting
 
 " Prevent Vim from leaving swapfiles everywhere
@@ -23,8 +20,25 @@ set shiftwidth=2
 
 " Setup Pathogen for Plugin Management
 call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 " Commands to add newlines without entering insert mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+" gVim Stuff
+" No menu no toolbar
+set guioptions-=m
+set guioptions-=t
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+set guifont=Consolas:h13:cANSI
+
+set background=dark
+color synthwave
+if has('termguicolors')
+	set termguicolors
+else
+	let g:synthwave_termcolors=256
+endif
