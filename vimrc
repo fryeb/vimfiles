@@ -1,4 +1,5 @@
 set relativenumber
+
 set number
 
 nnoremap ; :
@@ -33,7 +34,7 @@ set guioptions-=t
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-set guifont=Consolas:h13:cANSI
+set guifont=Consolas:h10:cANSI
 
 set background=dark
 colorscheme solarized
