@@ -36,7 +36,7 @@ set guioptions-=L
 set guifont=Consolas:h13:cANSI
 
 set background=dark
-color synthwave
+colorscheme solarized
 if has('termguicolors')
 	set termguicolors
 else
