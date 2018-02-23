@@ -1,5 +1,4 @@
 set relativenumber
-
 set number
 
 nnoremap ; :
@@ -14,18 +13,17 @@ set nobackup
 set noswapfile
 set nowritebackup
 
+set showcmd
+
 " Tab Settings
 set tabstop=2
 set softtabstop=0 noexpandtab
 set shiftwidth=2
 
-" Setup Pathogen for Plugin Management
-call pathogen#helptags()
-call pathogen#infect()
-
 " Commands to add newlines without entering insert mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+nmap <S-W> <C-W><C-W>
 
 " gVim Stuff
 " No menu no toolbar
@@ -43,3 +41,16 @@ if has('termguicolors')
 else
 	let g:synthwave_termcolors=256
 endif
+
+" File finding
+set path +=**
+set wildmenu
+
+"vsplit "Split into two pane mode on startup
+"au GUIenter * simalt ~x "Maximise window on startup
+
+autocmd GUIenter * simalt ~x
+
+" Make vertical split easier
+set splitbelow
+set splitright
