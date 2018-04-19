@@ -46,11 +46,5 @@ endif
 set path +=**
 set wildmenu
 
-"vsplit "Split into two pane mode on startup
-"au GUIenter * simalt ~x "Maximise window on startup
-
+" Maximise on startup
 autocmd GUIenter * simalt ~x
-
-" Make vertical split easier
-set splitbelow
-set splitright
