@@ -48,3 +48,17 @@ set wildmenu
 
 " Maximise on startup
 autocmd GUIenter * simalt ~x
+
+" Make sessions work automaticaly (remember not to commit sessions)
+fu! SaveSess()
+    execute 'mksession! ' . getcwd() . '/Session.vim'
+endfunction
+
+fu! RestoreSess()
+	if filereadable(getcwd() . '/Session.vim')
+		execute 'source ' . getcwd() . '/Session.vim'
+	endif
+endfunction
+
+autocmd VimLeave * call SaveSess()
+autocmd VimEnter * call RestoreSess()
