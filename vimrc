@@ -1,10 +1,5 @@
-set relativenumber
-set number
-
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
+set nonumber
+set norelativenumber
 
 syntax on "Enable Syntax Highlighting
 
@@ -16,14 +11,28 @@ set nowritebackup
 set showcmd
 
 " Tab Settings
-set tabstop=2
-set softtabstop=0 noexpandtab
-set shiftwidth=2
+set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
+set shiftwidth=8
+set tabstop=8
+
+" Screen Refresh Code (for ligatures)
+inoremap <Esc> <Esc><C-L>
 
 " Commands to add newlines without entering insert mode
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 nmap <S-W> <C-W><C-W>
+set equalalways
+nnoremap <Space> :find<Space>
+nnoremap <S-Space> :Explore <Enter>
+
+" Commands for the terminal
+nnoremap t :terminal<Enter>
+nnoremap <S-T> <C-W><C-W>:terminal<Enter>
+tnoremap <Esc> <C-\><C-n>
 
 " gVim Stuff
 " No menu no toolbar
@@ -31,8 +40,8 @@ set guioptions-=m
 set guioptions-=t
 set guioptions-=T
 set guioptions-=r
-set guioptions-=L
-set guifont=Consolas:h10:cANSI
+	set guioptions-=L
+set guifont=Fira\ Code:h10
 
 set background=dark
 colorscheme synthwave
@@ -45,9 +54,30 @@ endif
 " File finding
 set path +=**
 set wildmenu
+let g:netrw_liststyle = 3 "Tree style listing
 
 " Maximise on startup
 autocmd GUIenter * simalt ~x
+
+set renderoptions=type:directx
+set encoding=utf-8
+set ruler " Enable line and column in status line
+
+" Build Stuff
+function! s:build()
+  let &makeprg='build --run'
+  silent make
+  wincmd w
+  q
+  vertical botright copen
+  wincmd =
+  wincmd w
+endfunction
+command! Build call s:build()
+
+nnoremap <silent><F5> :wa<CR>:Build<CR>:cn<CR>
+nnoremap <silent><F6> :cn<CR>
+nnoremap <silent><F7> :cp<CR>
 
 " Make sessions work automaticaly (remember not to commit sessions)
 fu! SaveSess()
