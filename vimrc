@@ -3,6 +3,11 @@ set norelativenumber
 
 syntax on "Enable Syntax Highlighting
 
+nnoremap : ;
+nnoremap ; :
+vnoremap : ;
+vnoremap ; :
+
 " Prevent Vim from leaving swapfiles everywhere
 set nobackup
 set noswapfile
@@ -75,9 +80,11 @@ function! s:build()
 endfunction
 command! Build call s:build()
 
-nnoremap <silent><F5> :wa<CR>:Build<CR>:cn<CR>
-nnoremap <silent><F6> :cn<CR>
-nnoremap <silent><F7> :cp<CR>
+nnoremap <silent><F5>  :wa<CR>:Build<CR>:cn<CR>
+nnoremap <silent><F1>  :cn<CR>
+nnoremap <silent><F2>  :cp<CR>
+nnoremap <silent><F11> :cn<CR>
+nnoremap <silent><F12> :cp<CR>
 
 " Make sessions work automaticaly (remember not to commit sessions)
 fu! SaveSess()

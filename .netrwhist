@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='W:/lazy-face'
-let g:netrw_dirhist_2='W:/lazy-face/Assignment 1'
-let g:netrw_dirhist_3='W:/qk/src'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='W:/lazy-face/Assignment 1/Assets/Scripts/ScriptableObjects'
+let g:netrw_dirhist_2='W:/lazy-face/Assignment 1/Assets/Scripts'
+let g:netrw_dirhist_3='W:/lazy-face/Assignment 1/Assets'
+let g:netrw_dirhist_4='W:/lazy-face/Assignment 1/Assets/Shaders'
+let g:netrw_dirhist_5='C:/Users/benjf/vimfiles'
+let g:netrw_dirhist_6='C:/Users/benjf/vimfiles/autoload'
+let g:netrw_dirhist_7='C:/Users/benjf/vimfiles/bundle'
+let g:netrw_dirhist_8='C:/Users/benjf/vimfiles/bundle/rust.vim'
+let g:netrw_dirhist_9='C:/Users/benjf/vimfiles/colors'
