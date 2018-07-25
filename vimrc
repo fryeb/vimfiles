@@ -23,8 +23,35 @@ set softtabstop=0
 set shiftwidth=8
 set tabstop=8
 
+nnoremap Q @q
+nnoremap Y y$
+
+function! Tab_Or_Complete()
+    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+        return "\<C-N>"
+    else
+        return "\<Tab>"
+    endif
+endfunction
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+nnoremap <Tab> *
+nnoremap <S-Tab> #
+
+set hlsearch
+set updatetime=10
+function! HighlightWordUnderCursor()
+    if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]' 
+        exec 'match' 'SameWord' '/\V\<'.expand('<cword>').'\>/' 
+    else 
+        match none 
+    endif
+endfunction
+
+autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
+
 " Screen Refresh Code (for ligatures)
 inoremap <Esc> <Esc><C-L>
+nnoremap <C-Tab> <C-L>:let<Space>@/<Space> = <Space>""<CR>
 
 " Commands to add newlines without entering insert mode
 nmap <S-Enter> O<Esc>

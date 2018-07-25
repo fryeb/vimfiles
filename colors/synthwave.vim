@@ -129,31 +129,31 @@ let s:vertsplit = { "gui": "#181A1F", "cterm": "16" }
 " | Syntax Groups (descriptions and ordering from `:h w18`) |
 " +---------------------------------------------------------+
 
-call s:h("Comment", { "bg":s:cursor_grey, "fg": s:green, "gui": "bold", "cterm": "italic" }) " any comment
+call s:h("Comment", { "bg":s:cursor_grey, "fg": s:green, "gui": "italic", "cterm": "italic" }) " any comment
 call s:h("Constant", { "fg": s:cyan }) " any constant
-call s:h("String", { "fg": s:dark_yellow }) " a string constant: "this is a string"
+call s:h("String", { "fg": s:dark_yellow }) " a string constant: 'this is a string'
 call s:h("Character", { "fg": s:dark_yellow }) " a character constant: 'c', '\n'
 call s:h("Number", { "fg": s:dark_yellow }) " a number constant: 234, 0xff
 call s:h("Boolean", { "fg": s:dark_yellow }) " a boolean constant: TRUE, false
 call s:h("Float", { "fg": s:dark_yellow }) " a floating point constant: 2.3e10
 call s:h("Identifier", { "fg": s:red }) " any variable name
 call s:h("Function", { "fg": s:blue }) " function name (also: methods for classes)
-call s:h("Statement", { "fg": s:turqoise }) " any statement
-call s:h("Conditional", { "fg": s:turqoise }) " if, then, else, endif, switch, etc.
-call s:h("Repeat", { "fg": s:turqoise }) " for, do, while, etc.
-call s:h("Label", { "fg": s:turqoise }) " case, default, etc.
-call s:h("Operator", { "fg": s:turqoise }) " sizeof", "+", "*", etc.
+call s:h("Statement", { "fg": s:blue }) " any statement
+call s:h("Conditional", { "fg": s:blue }) " if, then, else, endif, switch, etc.
+call s:h("Repeat", { "fg": s:blue }) " for, do, while, etc.
+call s:h("Label", { "fg": s:blue }) " case, default, etc.
+call s:h("Operator", { "fg": s:blue }) " sizeof", "+", "*", etc.
 call s:h("Keyword", { "fg": s:red }) " any other keyword
-call s:h("Exception", { "fg": s:turqoise }) " try, catch, throw
+call s:h("Exception", { "fg": s:blue }) " try, catch, throw
 call s:h("PreProc", { "fg": s:yellow }) " generic Preprocessor
-call s:h("Include", { "fg": s:blue }) " preprocessor #include
-call s:h("Define", { "fg": s:turqoise }) " preprocessor #define
-call s:h("Macro", { "fg": s:turqoise }) " same as Define
+call s:h("Include", { "fg": s:yellow }) " preprocessor #include
+call s:h("Define", { "fg": s:yellow }) " preprocessor #define
+call s:h("Macro", { "fg": s:yellow }) " same as Define
 call s:h("PreCondit", { "fg": s:yellow }) " preprocessor #if, #else, #endif, etc.
-call s:h("Type", { "fg": s:yellow }) " int, long, char, etc.
-call s:h("StorageClass", { "fg": s:yellow }) " static, register, volatile, etc.
-call s:h("Structure", { "fg": s:yellow }) " struct, union, enum, etc.
-call s:h("Typedef", { "fg": s:yellow }) " A typedef
+call s:h("Type", { "fg": s:turqoise }) " int, long, char, etc.
+call s:h("StorageClass", { "fg": s:turqoise }) " static, register, volatile, etc.
+call s:h("Structure", { "fg": s:turqoise }) " struct, union, enum, etc.
+call s:h("Typedef", { "fg": s:turqoise }) " A typedef
 call s:h("Special", { "fg": s:blue }) " any special symbol
 call s:h("SpecialChar", {}) " special character in a constant
 call s:h("Tag", {}) " you can use CTRL-] on this
@@ -163,7 +163,7 @@ call s:h("Debug", {}) " debugging statements
 call s:h("Underlined", {}) " text that stands out, HTML links
 call s:h("Ignore", {}) " left blank, hidden
 call s:h("Error", { "fg": s:red }) " any erroneous construct
-call s:h("Todo", { "fg": s:turqoise }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+call s:h("Todo", { "bg":s:cursor_grey, "fg": s:turqoise, "gui": "underline", "cterm": "italic" }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 " +----------------------------------------------------------------------+
 " | Highlighting Groups (descriptions and ordering from `:h hitest.vim`) |
@@ -198,7 +198,8 @@ call s:h("PmenuSel", { "fg": s:black, "bg": s:blue }) " Popup menu: selected ite
 call s:h("PmenuSbar", { "bg": s:special_grey }) " Popup menu: scrollbar.
 call s:h("PmenuThumb", { "bg": s:white }) " Popup menu: Thumb of the scrollbar.
 call s:h("Question", { "fg": s:turqoise }) " hit-enter prompt and yes/no questions
-call s:h("Search", { "fg": s:black, "bg": s:yellow }) " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
+call s:h("Search", { "gui": "underline" }) " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
+call s:h("SameWord", { "gui": "bold" }) " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
 call s:h("SpecialKey", { "fg": s:special_grey }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
 call s:h("SpellBad", { "fg": s:red, "gui": "underline", "cterm": "underline" }) " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
 call s:h("SpellCap", { "fg": s:dark_yellow }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
