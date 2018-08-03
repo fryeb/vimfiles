@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='C:/Users/benjf/vimfiles/bundle'
-let g:netrw_dirhist_2='C:/Users/benjf/vimfiles'
-let g:netrw_dirhist_3='C:/Users/benjf/vimfiles/colors'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='W:/lazy-face/Assignment 1/Assets/Scripts/ScriptableObjects/Inventory'
+let g:netrw_dirhist_2='W:/lazy-face/Assignment 1/Assets/Scripts'
+let g:netrw_dirhist_3='W:/lazy-face/Assignment 1/Assets'
+let g:netrw_dirhist_4='W:/lazy-face/Assignment 1'
+let g:netrw_dirhist_5='W:/magic/Assets/Scripts'
+let g:netrw_dirhist_6='W:/skull'
+let g:netrw_dirhist_7='W:/RMIT/adv-prog/assignment-01'
+let g:netrw_dirhist_8='W:/RMIT/adv-prog/assignment-01/.git'
+let g:netrw_dirhist_9='W:/RMIT/adv-prog/assignment-01'

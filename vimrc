@@ -24,7 +24,7 @@ set shiftwidth=8
 set tabstop=8
 
 nnoremap Q @q
-nnoremap Y y$
+nnoremap Y ^y$
 
 function! Tab_Or_Complete()
     if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
@@ -76,11 +76,9 @@ set guioptions-=r
 set guifont=Fira\ Code:h10
 
 set background=dark
-colorscheme synthwave
+colorscheme ben
 if has('termguicolors')
 	set termguicolors
-else
-	let g:synthwave_termcolors=256
 endif
 
 " File finding
