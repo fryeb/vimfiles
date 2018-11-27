@@ -1,4 +1,4 @@
-" Recognise my typedefs
+" Common Math Keywords
 syn keyword Type u8
 syn keyword Type u16
 syn keyword Type u32
@@ -10,7 +10,6 @@ syn keyword Type i32
 syn keyword Type i64
 syn keyword Type usise
 
-" Common Vector options
 syn keyword Type v2
 syn keyword Type v3
 syn keyword Type v4

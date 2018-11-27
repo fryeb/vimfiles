@@ -15,7 +15,7 @@ set nowritebackup
 
 set showcmd
 
-" Tab Settings
+" Default Tab Settings
 set noexpandtab
 set copyindent
 set preserveindent
@@ -33,9 +33,20 @@ function! Tab_Or_Complete()
         return "\<Tab>"
     endif
 endfunction
+function! Tab_Or_Complete_Backwards()
+    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+        return "\<C-P>"
+    else
+        return "\<Tab>"
+    endif
+endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+inoremap <S-Tab> <C-R>=Tab_Or_Complete()<CR>
 nnoremap <Tab> *
 nnoremap <S-Tab> #
+
+" Allow indentation to be overriden by file type
+filetype plugin indent on
 
 set hlsearch
 set updatetime=10
