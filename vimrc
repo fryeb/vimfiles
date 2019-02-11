@@ -83,8 +83,8 @@ set guioptions-=m
 set guioptions-=t
 set guioptions-=T
 set guioptions-=r
-	set guioptions-=L
-set guifont=Fira\ Code:h10
+set guioptions-=L
+set guifont=Consolas:h10
 
 set background=dark
 colorscheme ben
@@ -121,17 +121,3 @@ nnoremap <silent><F1>  :cn<CR>
 nnoremap <silent><F2>  :cp<CR>
 nnoremap <silent><F11> :cn<CR>
 nnoremap <silent><F12> :cp<CR>
-
-" Make sessions work automaticaly (remember not to commit sessions)
-fu! SaveSess()
-    execute 'mksession! ' . getcwd() . '/Session.vim'
-endfunction
-
-fu! RestoreSess()
-	if filereadable(getcwd() . '/Session.vim')
-		execute 'source ' . getcwd() . '/Session.vim'
-	endif
-endfunction
-
-autocmd VimLeave * call SaveSess()
-autocmd VimEnter * call RestoreSess()
