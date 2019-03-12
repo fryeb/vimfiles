@@ -20,8 +20,8 @@ set noexpandtab
 set copyindent
 set preserveindent
 set softtabstop=0
-set shiftwidth=8
-set tabstop=8
+set shiftwidth=4
+set tabstop=4
 
 nnoremap Q @q
 nnoremap Y ^y$
@@ -71,11 +71,6 @@ nmap <S-W> <C-W><C-W>
 set equalalways
 nnoremap <Space> :find<Space>
 nnoremap <S-Space> :Explore <Enter>
-
-" Commands for the terminal
-nnoremap t :terminal<Enter>
-nnoremap <S-T> <C-W><C-W>:terminal<Enter>
-tnoremap <Esc> <C-\><C-n>
 
 " gVim Stuff
 " No menu no toolbar
