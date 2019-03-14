@@ -1,5 +1,5 @@
 " Basics
-let mapleader=" "
+let mapleader=";"
 let maplocalleader="-"
 set notimeout
 set ttimeoutlen=100
