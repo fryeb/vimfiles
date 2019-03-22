@@ -1,5 +1,5 @@
 
-colorscheme solarized
+colorscheme desert
 
 set guioptions-=m
 set guioptions-=t

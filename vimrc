@@ -17,6 +17,12 @@ set notimeout
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 
+" Indentation
+set tabstop=4
+set softtabstop=0
+set noexpandtab
+set shiftwidth=4
+
 " Disable Swapfiles
 set nobackup
 set nowritebackup
@@ -31,13 +37,18 @@ nnoremap <leader>q @q
 nnoremap <leader>s :set<space>
 nnoremap <esc> :noh
 
+" Build Stuff
 set makeprg=''
-nnoremap <leader>m :make<space>
-nnoremap <leader>M :let &makeprg=
+nnoremap <leader>m :w<cr>:make<cr>
+nnoremap <leader>M :let &makeprg="
+nnoremap <leader>n :cn
+nnoremap <leader>p :cp
 
+" Window Navigation
 nnoremap <leader><tab> <C-w><C-w>
 nnoremap <C-w><C-w> <nop>
 
+" Self Editing
 nnoremap <leader>ev :w<cr> :o $MYVIMRC<cr>
 nnoremap <leader>eg :w<cr> :o $MYGVIMRC<cr>
 if has('gui')
