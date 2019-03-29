@@ -41,6 +41,7 @@ nnoremap <esc> :noh
 set makeprg=''
 nnoremap <leader>m :w<cr>:make<cr>
 nnoremap <leader>M :let &makeprg="
+nnoremap <leader>c :cc<cr>
 nnoremap <leader>n :cn<cr>
 nnoremap <leader>p :cp<cr>
 
