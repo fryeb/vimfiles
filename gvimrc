@@ -1,5 +1,5 @@
 
-colorscheme desert
+colorscheme monokai
 
 set guioptions-=m
 set guioptions-=t
