@@ -28,14 +28,26 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Insert Mode
+imapclear
+inoremap jk <esc>be
+inoremap kj <esc>be
+inoremap <esc> <nop>
+inoremap <tab> <C-n>
+inoremap <S-tab> <C-p>
+
 " Normal Mode
 nmapclear
 nnoremap <leader>f :find<space>
 nnoremap <leader>w :w<cr>
-nnoremap <leader>v :vsplit<cr>
-nnoremap <leader>q @q
+nnoremap <leader>v :vsplit<cr>:find<space>
+nnoremap <leader>s :split<cr>:find<space>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>2 @q
 nnoremap <leader>s :set<space>
-nnoremap <esc> :noh
+nnoremap <esc> :noh<cr>
+" Sets mark at current position, indents surounding block, jumps back to current position
+nnoremap <tab> mm=a{'m
 
 " Build Stuff
 set makeprg=''
@@ -58,9 +70,4 @@ else
 	nnoremap <leader>r :w<cr> :source $MYVIMRC<cr>
 endif
 
-" Insert Mode
-imapclear
-inoremap jk <esc>be
-inoremap kj <esc>be
-inoremap <esc> <nop>
 
