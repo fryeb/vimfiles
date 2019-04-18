@@ -30,11 +30,12 @@ set noswapfile
 
 " Insert Mode
 imapclear
-inoremap jk <esc>be
-inoremap kj <esc>be
+inoremap jk <esc>
+inoremap kj <esc>
+inoremap hj <esc>
+inoremap <S-space> <C-n>
+inoremap <S-cr> <C-p>
 inoremap <esc> <nop>
-inoremap <tab> <C-n>
-inoremap <S-tab> <C-p>
 
 " Normal Mode
 nmapclear
@@ -47,7 +48,7 @@ nnoremap <leader>2 @q
 nnoremap <leader>s :set<space>
 nnoremap <esc> :noh<cr>
 " Sets mark at current position, indents surounding block, jumps back to current position
-nnoremap <tab> mm=a{'m
+nnoremap = mmgg=G'm
 
 " Build Stuff
 set makeprg=''
@@ -58,7 +59,7 @@ nnoremap <leader>n :cn<cr>
 nnoremap <leader>p :cp<cr>
 
 " Window Navigation
-nnoremap <leader><tab> <C-w><C-w>
+nnoremap <tab> <C-w><C-w>
 nnoremap <C-w><C-w> <nop>
 
 " Self Editing
