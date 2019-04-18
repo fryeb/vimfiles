@@ -28,14 +28,27 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Insert Mode
+imapclear
+inoremap jk <esc>
+inoremap kj <esc>
+inoremap hj <esc>
+inoremap <S-space> <C-n>
+inoremap <S-cr> <C-p>
+inoremap <esc> <nop>
+
 " Normal Mode
 nmapclear
 nnoremap <leader>f :find<space>
 nnoremap <leader>w :w<cr>
-nnoremap <leader>v :vsplit<cr>
-nnoremap <leader>q @q
+nnoremap <leader>v :vsplit<cr>:find<space>
+nnoremap <leader>s :split<cr>:find<space>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>2 @q
 nnoremap <leader>s :set<space>
-nnoremap <esc> :noh
+nnoremap <esc> :noh<cr>
+" Sets mark at current position, indents surounding block, jumps back to current position
+nnoremap = mmgg=G'm
 
 " Build Stuff
 set makeprg=''
@@ -46,7 +59,7 @@ nnoremap <leader>n :cn<cr>
 nnoremap <leader>p :cp<cr>
 
 " Window Navigation
-nnoremap <leader><tab> <C-w><C-w>
+nnoremap <tab> <C-w><C-w>
 nnoremap <C-w><C-w> <nop>
 
 " Self Editing
@@ -58,9 +71,4 @@ else
 	nnoremap <leader>r :w<cr> :source $MYVIMRC<cr>
 endif
 
-" Insert Mode
-imapclear
-inoremap jk <esc>be
-inoremap kj <esc>be
-inoremap <esc> <nop>
 
