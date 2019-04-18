@@ -1,5 +1,5 @@
 
-let colors=['desert', 'monokai', 'evening']
+let colors=['monokai', 'solarized']
 let colorIndex=localtime() % len(colors)
 execute 'colorscheme '.colors[colorIndex]
 
