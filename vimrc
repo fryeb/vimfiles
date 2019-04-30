@@ -32,17 +32,17 @@ set noswapfile
 imapclear
 inoremap jk <esc>
 inoremap kj <esc>
-inoremap hj <esc>
-inoremap <S-space> <C-n>
-inoremap <S-cr> <C-p>
+inoremap <S-space> <C-p>
+inoremap <S-cr> <C-n>
 inoremap <esc> <nop>
 
 " Normal Mode
 nmapclear
 nnoremap <leader>f :find<space>
 nnoremap <leader>w :w<cr>
-nnoremap <leader>v :vsplit<cr>:find<space>
-nnoremap <leader>s :split<cr>:find<space>
+nnoremap <leader>o :o<cr>
+nnoremap <leader>v :vsplit<cr>
+nnoremap <leader>s :split<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>2 @q
 nnoremap <leader>s :set<space>
@@ -52,11 +52,11 @@ nnoremap = mmgg=G'm
 
 " Build Stuff
 set makeprg=''
-nnoremap <leader>m :w<cr>:make<cr>
+nnoremap <leader>m :w<cr>:make<cr><cr>:cw<cr>:cc<cr>
 nnoremap <leader>M :let &makeprg="
-nnoremap <leader>c :cc<cr>
-nnoremap <leader>n :cn<cr>
-nnoremap <leader>p :cp<cr>
+nnoremap <leader>c :cw<cr>:cc<cr>
+nnoremap <leader>n :cw<cr>:cn<cr>
+nnoremap <leader>p :cw<cr>:cp<cr>
 
 " Window Navigation
 nnoremap <tab> <C-w><C-w>
