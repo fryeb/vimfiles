@@ -8,4 +8,8 @@ set guioptions-=t
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-set guifont=Consolas:h10
+if has("win32")
+	set guifont=Consolas:h10
+else
+	set guifont="DejaVu Sans Mono 10"
+endif
