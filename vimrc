@@ -22,6 +22,7 @@ set tabstop=4
 set softtabstop=0
 set noexpandtab
 set shiftwidth=4
+set colorcolumn=80
 
 " Disable Swapfiles
 set nobackup
@@ -47,8 +48,6 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>2 @q
 nnoremap <leader>s :set<space>
 nnoremap <esc> :noh<cr>
-" Sets mark at current position, indents surounding block, jumps back to current position
-nnoremap = mmgg=G'm
 
 " Build Stuff
 set makeprg=''
@@ -71,4 +70,53 @@ else
 	nnoremap <leader>r :w<cr> :source $MYVIMRC<cr>
 endif
 
+" Git Stuff
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD")
+endfunction
 
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0 ?'  ' . split(l:branchname)[0] .' ':''
+endfunction
+
+let g:git_branch = StatuslineGit()
+
+" Status Line
+
+function! GetModeStatusText() "{{{
+	if (mode() ==# 'n')
+		hi! StatusMode guifg=#002b36 guibg=#268bd2
+		return 'NORMAL '
+	elseif (mode() =~# '\v(v|V)')
+		hi! StatusMode guifg=#002b36 guibg=#d33682
+		return 'VISUAL '
+	elseif (mode() ==# 'i')
+		hi! StatusMode guifg=#002b36 guibg=#719e07
+		return 'INSERT '
+	elseif (mode() ==# 'c')
+		hi! StatusMode guifg=#002b36 guibg=#cb4b16
+		return 'SEARCH '
+	else
+		echom mode()
+
+		hi! StatusMode guifg=#002b36 guibg=#ff00000
+		return 'UNKNOWN '
+	endif
+
+endfunction "}}}
+
+set laststatus=2
+set statusline=
+set statusline+=%#StatusMode#
+set statusline+=\ %{GetModeStatusText()}
+set statusline+=%#PmenuSel#     " Color
+set statusline+=%{g:git_branch} " Git
+set statusline+=%#LineNr#       " Color
+set statusline+=\ %f            " FileName
+set statusline+=%m\             " Show if file has been modified
+set statusline+=%=              " Align to the right
+set statusline+=%#CursorColumn# " Color
+set statusline+=\ %y            " File Type
+set statusline+=\ %l:%c
+set statusline+=\ 
