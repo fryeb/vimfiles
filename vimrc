@@ -51,7 +51,7 @@ nnoremap <esc> :noh<cr>
 
 " Build Stuff
 set makeprg=''
-nnoremap <leader>m :w<cr>:make<cr><cr>:cw<cr>:cc<cr>
+nnoremap <leader>m :wa<cr>:make<cr><cr>:cw<cr>:cc<cr>
 nnoremap <leader>M :let &makeprg="
 nnoremap <leader>c :cw<cr>:cc<cr>
 nnoremap <leader>n :cw<cr>:cn<cr>
