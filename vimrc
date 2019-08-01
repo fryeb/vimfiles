@@ -12,7 +12,9 @@ set scrolloff=2
 
 let mapleader=" "
 let maplocalleader="-"
-set notimeout
+set timeout
+set timeoutlen=50
+set ttimeoutlen=50
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
@@ -48,6 +50,12 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>2 @q
 nnoremap <leader>s :set<space>
 nnoremap <esc> :noh<cr>
+
+" Visual Mode
+vmapclear
+vnoremap jk <esc>
+vnoremap kj <esc>
+vnoremap <esc> <nop>
 
 " Build Stuff
 set makeprg=''
