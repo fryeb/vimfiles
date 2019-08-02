@@ -13,8 +13,8 @@ set scrolloff=2
 let mapleader=" "
 let maplocalleader="-"
 set timeout
-set timeoutlen=50
-set ttimeoutlen=50
+set timeoutlen=150
+set ttimeoutlen=150
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
