@@ -9,6 +9,7 @@ set incsearch
 set wildmenu
 set path+=**/*
 set scrolloff=2
+set autoread
 
 let mapleader=" "
 let maplocalleader="-"
@@ -24,7 +25,7 @@ set tabstop=4
 set softtabstop=0
 set noexpandtab
 set shiftwidth=4
-set colorcolumn=80
+set colorcolumn=100
 
 " Disable Swapfiles
 set nobackup
@@ -42,7 +43,7 @@ inoremap <esc> <nop>
 " Normal Mode
 nmapclear
 nnoremap <leader>f :find<space>
-nnoremap <leader>w :w<cr>
+nnoremap <leader>w :call SaveAndFormat()<cr>
 nnoremap <leader>o :o<cr>
 nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>s :split<cr>
@@ -128,3 +129,13 @@ set statusline+=%#CursorColumn# " Color
 set statusline+=\ %y            " File Type
 set statusline+=\ %l:%c
 set statusline+=\ 
+
+function! SaveAndFormat()
+	w
+	if (b:current_syntax ==# "c")
+		execute "silent !clang-format -i " . bufname("%")
+	elseif (b:current_syntax ==# "cpp")
+		execute "silent !clang-format -i " . bufname("%")
+	endif
+endfunction
+
