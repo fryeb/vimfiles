@@ -14,8 +14,8 @@ set autoread
 let mapleader=" "
 let maplocalleader="-"
 set timeout
-set timeoutlen=150
-set ttimeoutlen=150
+set timeoutlen=300
+set ttimeoutlen=300
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
