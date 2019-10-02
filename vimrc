@@ -132,10 +132,12 @@ set statusline+=\
 
 function! SaveAndFormat()
 	w
-	if (b:current_syntax ==# "c")
-		execute "silent !clang-format -i " . bufname("%")
-	elseif (b:current_syntax ==# "cpp")
-		execute "silent !clang-format -i " . bufname("%")
+	if (exists("b:current_syntax"))
+		if (b:current_syntax ==# "c")
+			execute "silent !clang-format -i " . bufname("%")
+		elseif (b:current_syntax ==# "cpp")
+			execute "silent !clang-format -i " . bufname("%")
+		endif
 	endif
 endfunction
 
