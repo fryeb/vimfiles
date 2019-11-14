@@ -34,10 +34,9 @@ set noswapfile
 
 " Insert Mode
 imapclear
-inoremap jk <esc>
-inoremap kj <esc>
 inoremap <S-space> <C-p>
 inoremap <S-cr> <C-n>
+inoremap <tab> <esc>=i{
 inoremap <esc> <nop>
 
 " Normal Mode
@@ -55,7 +54,7 @@ nnoremap <esc> :noh<cr>
 " Visual Mode
 vmapclear
 vnoremap jk <esc>
-vnoremap kj <esc>
+"vnoremap kj <esc>
 vnoremap <esc> <nop>
 
 " Build Stuff
@@ -67,7 +66,7 @@ nnoremap <leader>n :cw<cr>:cn<cr>
 nnoremap <leader>p :cw<cr>:cp<cr>
 
 " Window Navigation
-nnoremap <tab> <C-w><C-w>
+nnoremap <tab> =i{<C-w><C-w>
 nnoremap <C-w><C-w> <nop>
 
 " Self Editing
@@ -109,7 +108,7 @@ function! GetModeStatusText() "{{{
 	else
 		echom mode()
 
-		hi! StatusMode guifg=#002b36 guibg=#ff00000
+		hi! StatusMode guifg=#002b36 guibg=#ff0000
 		return 'UNKNOWN '
 	endif
 
