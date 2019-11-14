@@ -36,7 +36,7 @@ set noswapfile
 imapclear
 inoremap <S-space> <C-p>
 inoremap <S-cr> <C-n>
-inoremap <tab> <esc>=i{
+inoremap <tab> <esc>=i{''
 inoremap <esc> <nop>
 
 " Normal Mode
@@ -66,7 +66,7 @@ nnoremap <leader>n :cw<cr>:cn<cr>
 nnoremap <leader>p :cw<cr>:cp<cr>
 
 " Window Navigation
-nnoremap <tab> =i{<C-w><C-w>
+nnoremap <tab> =i{''<C-w><C-w>
 nnoremap <C-w><C-w> <nop>
 
 " Self Editing
