@@ -24,6 +24,7 @@ set background=dark
 set tabstop=4
 set softtabstop=0
 set noexpandtab
+autocmd FileType python set expandtab
 set shiftwidth=4
 "set colorcolumn=100
 
@@ -32,17 +33,24 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Command Mode
+cmapclear
+cnoremap kj <esc>
+cnoremap jk <esc>
+
 " Insert Mode
 imapclear
 inoremap <S-space> <C-p>
+inoremap kj <esc>
+inoremap jk <esc>
 inoremap <S-cr> <C-n>
-inoremap <tab> <esc>=i{''
-inoremap <esc> <nop>
 
 " Normal Mode
 nmapclear
 nnoremap <leader>f :find<space>
+"nnoremap <leader>w :w <cr>
 nnoremap <leader>w :call SaveAndFormat()<cr>
+
 nnoremap <leader>o :o<cr>
 nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>s :split<cr>
@@ -50,24 +58,21 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>2 @q
 nnoremap <leader>s :set<space>
 nnoremap <esc> :noh<cr>
+nnoremap <tab> <C-w><C-w>
+nnoremap <C-w><C-w> <nop>
 
 " Visual Mode
 vmapclear
 vnoremap jk <esc>
-"vnoremap kj <esc>
 vnoremap <esc> <nop>
 
 " Build Stuff
-set makeprg=''
+set makeprg="build"
 nnoremap <leader>m :wa<cr>:make<cr><cr>:cw<cr>:cc<cr>
 nnoremap <leader>M :let &makeprg="
 nnoremap <leader>c :cw<cr>:cc<cr>
 nnoremap <leader>n :cw<cr>:cn<cr>
 nnoremap <leader>p :cw<cr>:cp<cr>
-
-" Window Navigation
-nnoremap <tab> =i{''<C-w><C-w>
-nnoremap <C-w><C-w> <nop>
 
 " Self Editing
 nnoremap <leader>ev :w<cr> :o $MYVIMRC<cr>
