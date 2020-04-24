@@ -21,11 +21,11 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 
 " Indentation
-set tabstop=4
+set tabstop=8
 set softtabstop=0
 set noexpandtab
 autocmd FileType python set expandtab
-set shiftwidth=4
+set shiftwidth=8
 "set colorcolumn=100
 
 " Disable Swapfiles
@@ -68,7 +68,7 @@ vnoremap <esc> <nop>
 
 " Build Stuff
 set makeprg="build"
-nnoremap <leader>m :wa<cr>:make<cr><cr>:cw<cr>:cc<cr>
+nnoremap <leader>m :make<cr>
 nnoremap <leader>M :let &makeprg="
 nnoremap <leader>c :cw<cr>:cc<cr>
 nnoremap <leader>n :cw<cr>:cn<cr>
@@ -138,7 +138,9 @@ function! SaveAndFormat()
 	w
 	if (exists("b:current_syntax"))
 		if (b:current_syntax ==# "c")
-			execute "silent !clang-format -i " . bufname("%")
+			if filereadable(".clang-format")
+			    execute "silent !clang-format -i " . bufname("%")
+			endif
 		elseif (b:current_syntax ==# "cpp")
 			execute "silent !clang-format -i " . bufname("%")
 		endif
